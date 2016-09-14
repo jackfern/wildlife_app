@@ -28,6 +28,9 @@
     <%= f.text_field :longitude %>
   </div>
   <div class="field">
+  <%= select(:sighting, :region, options_for_select([['north' ,'north'], ['south', 'south'], ['east', 'east'], ['west', 'west']])) %>
+  </div>
+  <div class="field">
     <%= select(:sighting, :animal_id, @animals_for_select) %>
   </div>
   <div class="actions">

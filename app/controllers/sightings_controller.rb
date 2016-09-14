@@ -14,11 +14,12 @@ class SightingsController < ApplicationController
 
   # GET /sightings/new
   def new
-    @sighting = Sighting.new
-    @animals_for_select = Animal.all.map do |animal|
-    [animal.common_name, animal.id]
+  @sighting = Sighting.new
+  @animals_for_select = Animal.all.map do |animal|
+  [animal.common_name, animal.id]
   end
-end
+
+  end
 
 
 
@@ -69,6 +70,20 @@ end
     end
   end
 
+  def index
+    if !(params[:start_date]).nil? && !(params[:end_date]).nil?
+      if !(params[:start_date]).empty? && !(params[:end_date]).empty?
+        @sightings = Sighting.where(date:   params[:start_date]..params[:end_date], region: params[:region])
+        render('sightings/index.html.erb')
+      else
+        @sightings = Sighting.all
+      end
+    else
+      @sightings = Sighting.all
+      render('sightings/index.html.erb')
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_sighting
@@ -77,6 +92,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def sighting_params
-      params.require(:sighting).permit(:date, :time, :latitude, :longitude, :animal_id)
+      params.require(:sighting).permit(:date, :time, :latitude, :longitude, :region, :animal_id)
     end
 end

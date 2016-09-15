@@ -15,18 +15,33 @@
   <%= @animal.kingdom %>
 </p>
 
-<p> <stong>Sightings:</strong>
-  <ul>
+<p> <strong>Sightings:</strong>
+  <ul id="sighting_list">
     <% @animal.sightings.each do |sighting| %>
         <li>Date:
-            <%= sighting.date %>
-            <br> Latitude:
-            <%= sighting.latitude %>
-            <br> Longitude:
-            <%= sighting.longitude %>
+          <%= sighting.date %>
+          <br> Latitude:
+          <%= sighting.latitude %>
+          <br> Longitude:
+          <%= sighting.longitude %>
+          <br>Region:
+          <%= sighting.region %>
         </li>
     <% end %>
   </ul>
+</p>
+
+
+<p>
+<input type="date" name="sighting[date]" placeholder="Date" id="s_date">
+<input type="time" name="sighting[time]" placeholder="Time" id="s_time">
+<input type="float" name="sighting[latitude]" placeholder="Latitude" id="latitude">
+<input type="float" name="sighting[longitude]" placeholder="Longitude" id="longitude">
+<div class="field" name="sighting[region]" >
+<%= select_tag("region", options_for_select([['north' ,'north'], ['south', 'south'], ['east', 'east'], ['west', 'west']])) %>
+</div>
+<input type="hidden" name="animal_id" id="animal_id" value="<%=@animal.id%>"/>
+<input type="button" value="submit" id="add_new_sighting"></button>
 </p>
 
 <%= link_to 'Edit', edit_animal_path(@animal) %> |

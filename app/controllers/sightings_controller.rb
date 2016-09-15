@@ -14,10 +14,10 @@ class SightingsController < ApplicationController
 
   # GET /sightings/new
   def new
-  @sighting = Sighting.new
-  @animals_for_select = Animal.all.map do |animal|
-  [animal.common_name, animal.id]
-  end
+    @sighting = Sighting.new
+    @animals_for_select = Animal.all.map do |animal|
+    [animal.common_name, animal.id]
+    end
 
   end
 

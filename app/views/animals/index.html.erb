@@ -12,9 +12,9 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody id="animalTable">
     <% @animals.each do |animal| %>
-      <tr>
+      <tr >
         <td><%= animal.common_name %></td>
         <td><%= animal.latin_name %></td>
         <td><%= animal.kingdom %></td>
@@ -30,3 +30,10 @@
 <a href='/sightings'>Sightings</a>
 
 <%= link_to 'New Animal', new_animal_path %>
+
+<p>
+<input type="text" name="animal[common_name]" placeholder="Common Name" id="common_name">
+<input type="text" name="animal[latin_name]" placeholder="Latin Name" id="latin_name">
+<input type="text" name="animal[kingdom]" placeholder="Kingdom" id="kingdom">
+<input type="button" value="submit" id="add_new_animal"></button>
+</p>

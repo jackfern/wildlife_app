@@ -23,7 +23,7 @@
         <td><%= sighting.latitude %></td>
         <td><%= sighting.longitude %></td>
         <td><%= sighting.region %></td>
-        <td><a href='animals/<%=sighting.animal.id%>'><%= sighting.animal.common_name %></a></td>
+        <td><a href='animals/<%=sighting.animal_id%>'><%= sighting.animal.common_name %></a></td>
         <td><%= link_to 'Show', sighting %></td>
         <td><%= link_to 'Edit', edit_sighting_path(sighting) %></td>
         <td><%= link_to 'Destroy', sighting, method: :delete, data: { confirm: 'Are you sure?' } %></td>

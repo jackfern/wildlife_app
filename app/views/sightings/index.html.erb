@@ -2,7 +2,7 @@
 
 <h1>Listing Sightings</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Date</th>
@@ -35,9 +35,9 @@
 <br>
 
 <form action="/sightings" method="get">
-  <label for="start_date">Start date</label>
+  <label class ="tacos" for="start_date">Start date</label>
   <input id="start_date" name="start_date" type="text">
-  <label for="end_date">End date</label>
+  <label class ="tacos" for="end_date">End date</label>
   <input id="end_date" name="end_date" type="text">
   <div class="field">
   <%= select_tag("region", options_for_select([['north' ,'north'], ['south', 'south'], ['east', 'east'], ['west', 'west']])) %>
@@ -45,6 +45,8 @@
   <button>Run report</button>
 </form>
 
+<br>
+<div id="calendar"></div>
 
 
 <br>

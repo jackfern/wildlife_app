@@ -85,7 +85,7 @@ $(document).ready(function(){
             alert("Received message: " + JSON.stringify(data));
 
 
-            $("#sighting_list").append("<li>"+data.date+"</li><li>"+data.latitude+"</li><li>"+data.longitude+"</li><li>"+data.region+"</li>")
+            $("#sighting_list").append("<li>Date: "+data.date+"<br>Latitude: "+data.latitude+"<br>Longitude: "+data.longitude+"<br>Region: "+data.region+"</li>")
           },
 
           error: function(jqXHR, textStatus, errorThrown) {

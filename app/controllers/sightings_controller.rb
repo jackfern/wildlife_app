@@ -30,6 +30,19 @@ class SightingsController < ApplicationController
     end
   end
 
+  def get_sightings
+    @sightings = Sighting.all
+    sightings = []
+    @sightings.each do |sighting|
+      sightings << {
+        id: sighting.id,
+        title: sighting.animal.common_name,
+        start: DateTime.new(sighting.date.year, sighting.date.month, sighting.date.day, sighting.time.hour, sighting.time.min, sighting.time.sec).to_s,
+        url: Rails.application.routes.url_helpers.sighting_path(sighting.id)}
+    end
+    render :json => sightings.to_json
+  end
+
   # POST /sightings
   # POST /sightings.json
   def create

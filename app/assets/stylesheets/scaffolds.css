@@ -4,12 +4,46 @@ body {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+  background-image: url("http://cdn.pcwallart.com/images/safari-animals-silhouette-wallpaper-3.jpg");
+  background-size: cover;}
+
+h1, h2 {
+  color: green;
 }
 
-p, ol, ul, td {
+#s_date {
+  color: black;
+}
+
+#region {
+  color: green;
+}
+
+#s_time {
+  color: black;
+}
+
+#latitude {
+  color: black;
+}
+
+#longitude {
+  color: black;
+}
+
+.tacos {
+  color: white;
+}
+
+#add_new_animal{
+  color: black;
+}
+
+p, ol, ul, td, th {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+  color: white;
 }
 
 pre {
@@ -19,16 +53,20 @@ pre {
 }
 
 a {
-  color: #000;
+  color: white;
 
   &:visited {
     color: #666;
   }
 
   &:hover {
-    color: #fff;
-    background-color: #000;
+    color: black;
+    background-color: black;
   }
+}
+
+.field {
+  color: white;
 }
 
 div {
